@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Birthday Surprise 💗</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0; min-height:100vh; overflow-x:hidden;
+  font-family:Georgia,serif;
+  background:linear-gradient(135deg,#fff1f7,#f9e8ff,#fff8ed);
+  color:#5b4051; display:flex; justify-content:center; align-items:center;
+}
+.card{
+  width:min(92%,650px); margin:30px auto; padding:35px 24px;
+  text-align:center; background:rgba(255,255,255,.78);
+  border:1px solid rgba(255,255,255,.9); border-radius:28px;
+  box-shadow:0 18px 55px rgba(130,80,120,.18);
+  backdrop-filter:blur(10px);
+}
+h1{font-size:clamp(30px,8vw,52px); margin:8px 0 5px; color:#b35b87}
+h2{font-size:25px;color:#9a5b7d;margin:10px}
+p{line-height:1.8;font-size:16px}
+.hidden{display:none}
+button{
+  border:0; padding:14px 24px; border-radius:999px;
+  background:#d783aa; color:white; font-size:16px; cursor:pointer;
+  box-shadow:0 8px 20px rgba(180,90,130,.25);
+}
+.bouquet{font-size:72px; margin:18px 0 5px; animation:float 2.5s ease-in-out infinite}
+.small{font-size:13px;color:#9a7b8b}
+.heart{position:fixed; top:-20px; animation:fall linear forwards; pointer-events:none}
+@keyframes float{50%{transform:translateY(-8px)}}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0}}
+</style>
+</head>
+<body>
+<div class="card">
+  <div id="start">
+    <div style="font-size:42px">💌</div>
+    <h1>A Little Surprise...</h1>
+    <p>Someone very special has a birthday today. 🌷</p>
+    <button onclick="openSurprise()">Open your surprise ✨</button>
+  </div>
+
+  <div id="main" class="hidden">
+    <div class="bouquet">💐</div>
+    <h1>Happy Birthday! 🎂</h1>
+    <h2>To my pyaari si dost 💗</h2>
+
+    <p>
+      Happiest Birthday meri pyaari si dost! 🥹💗🎂✨
+      Tum meri life mein sirf ek dost nahi, balki meri happiness,
+      meri pagalpan ki partner aur meri countless beautiful memories
+      ka ek special part ho. 🫶🏻 Thank you hamesha meri baatein sunne,
+      mujhe samajhne, meri stupid si baaton par hasne aur mere boring
+      days ko bhi better banane ke liye. 🌷
+    </p>
+
+    <p>
+      I genuinely hope tumhari life mein hamesha happiness, peace,
+      success aur bahut saari beautiful memories rahein. ✨
+      Jo bhi tum dil se chahti ho, woh sab tumhe mile, kyunki tum
+      genuinely saari achhi cheezon ki deserving ho. 🥹💞
+    </p>
+
+    <p>
+      Aur iss saal ke liye ek special blessing — 🤲🏻📚
+      <b>May your board exams go amazingly well!</b>
+      Tumhari saari mehnat rang laaye, exam hall mein tumhara confidence
+      bana rahe aur tumhe apni expectations se bhi better marks milein.
+      🧿✨ Panic bilkul mat karna, bas khud par believe rakhna aur apna
+      best dena. I'm sure tum bahut achha karogi! 💗
+    </p>
+
+    <p>
+      May God always bless you, tumhare saare dreams complete hon,
+      aur tumhari smile hamesha aise hi bani rahe. 🌸
+      Once again, happiest birthdayyy! 🥳🎀
+      Stay happy, stay blessed and always keep shining! 🌟💐
+    </p>
+
+    <div style="font-size:30px;margin-top:18px">🎀 🌷 🦋 🌸 💗 🌸 🦋 🌷 🎀</div>
+    <p class="small">Made with lots of love, just for you 💌</p>
+  </div>
+</div>
+
+<script>
+function openSurprise(){
+  document.getElementById('start').classList.add('hidden');
+  document.getElementById('main').classList.remove('hidden');
+  for(let i=0;i<22;i++){
+    setTimeout(()=>{
+      const h=document.createElement('div');
+      h.className='heart';
+      h.textContent=['💗','🌸','✨','🦋'][Math.floor(Math.random()*4)];
+      h.style.left=Math.random()*100+'vw';
+      h.style.fontSize=(14+Math.random()*20)+'px';
+      h.style.animationDuration=(3+Math.random()*4)+'s';
+      document.body.appendChild(h);
+      setTimeout(()=>h.remove(),7000);
+    },i*120);
+  }
+}
+</script>
+</body>
+</html>
